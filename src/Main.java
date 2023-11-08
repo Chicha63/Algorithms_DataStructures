@@ -14,7 +14,7 @@ public class Main {
                 27, 90, 32, 19, 4, 40, 63, 52, 55, 47,
                 56, 43, 51, 95, 54, 82, 57, 98, 99, 100};
         int[] array2 = {3,2,1,4};
-        Sorts.mergeSort(array2);
+        Sorts.mergeSort(array);
         System.out.println(Arrays.toString(array2));
     }
 }

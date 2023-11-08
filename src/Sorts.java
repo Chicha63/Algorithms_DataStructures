@@ -50,7 +50,43 @@ public class Sorts {
     }
 
     public static void mergeSort(int[] arr){
-        int[] additional = new int[arr.length];
+        sort(arr, 0, arr.length-1);
+    }
+
+    private static void sort(int[] arr, int l, int r){
+        if (l < r){
+            int m = (r - l) / 2 + l;
+            sort(arr, l, m);
+            sort(arr, m+1, r);
+            merge(arr, l, m, r);
+        }
+    }
+
+    private static void merge(int[] arr, int left, int mid, int right){
+        int size1 = mid - left + 1;
+        int size2 = right - mid;
+        int[] leftSib = new int[size1];
+        int[] rightSib = new int[size2];
+        System.arraycopy(arr, left, leftSib, 0, size1);
+        System.arraycopy(arr, mid + 1, rightSib, 0, size2);
+        int i = 0;
+        int j = 0;
+        int k = left;
+        while (i < size1 && j < size2){
+            if (leftSib[i] < rightSib[i]){
+                arr[k] = leftSib[i];
+                i++;
+            }else {
+                arr[k] = rightSib[i];
+                j++;
+            }
+            k++;
+        }
+        if (i < size1)
+            System.arraycopy(leftSib, i, arr, k, size1);
+        k += size1-i-1;
+        if (j < size2)
+            System.arraycopy(leftSib, j, arr, k, size2);
     }
 
     private static void swap(int[] arr, int i, int j){
