@@ -50,14 +50,47 @@ public class Sorts {
     }
 
     public static void mergeSort(int[] arr){
-        sort(arr, 0, arr.length-1);
+        sortM(arr, 0, arr.length-1);
     }
 
-    private static void sort(int[] arr, int l, int r){
+    public static void quickSort(int[] arr){
+        sortQ(arr, 0, arr.length-1);
+    }
+
+    private static void sortQ(int[] arr, int left, int right){
+        if (left < right){
+            int j = partition(arr, left, right);
+            sortQ(arr, left, j-1);
+            sortQ(arr, j+1, right);
+        }
+    }
+
+    private static int partition(int[] arr, int left, int right){
+        int i = left;
+        int j = right+1;
+        int p = arr[left];
+        while (true){
+            while (arr[++i] < p){
+                if (i == right)
+                    break;
+            }
+            while (p < arr[--j]){
+                if(j == left)
+                    break;
+            }
+            if (i >= j)
+                break;
+            swap(arr, i, j);
+        }
+        swap(arr, left, j);
+        return j;
+    }
+
+    private static void sortM(int[] arr, int l, int r){
         if (l < r){
             int m = (r - l) / 2 + l;
-            sort(arr, l, m);
-            sort(arr, m+1, r);
+            sortM(arr, l, m);
+            sortM(arr, m+1, r);
             merge(arr, l, m, r);
         }
     }
@@ -73,20 +106,19 @@ public class Sorts {
         int j = 0;
         int k = left;
         while (i < size1 && j < size2){
-            if (leftSib[i] < rightSib[i]){
+            if (leftSib[i] <= rightSib[j]){
                 arr[k] = leftSib[i];
                 i++;
             }else {
-                arr[k] = rightSib[i];
+                arr[k] = rightSib[j];
                 j++;
             }
             k++;
         }
         if (i < size1)
-            System.arraycopy(leftSib, i, arr, k, size1);
-        k += size1-i-1;
+            System.arraycopy(leftSib, i, arr, k, size1-i);
         if (j < size2)
-            System.arraycopy(leftSib, j, arr, k, size2);
+            System.arraycopy(rightSib, j, arr, k + size1 - i, size2 - j);
     }
 
     private static void swap(int[] arr, int i, int j){
