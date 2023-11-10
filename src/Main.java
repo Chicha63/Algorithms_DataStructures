@@ -1,6 +1,10 @@
-import java.sql.Array;
+import Algorithms.Sorts;
+import DataStructures.DoublyLinkedList;
+import DataStructures.DoublyLinkedNode;
+import DataStructures.Node;
+import DataStructures.SinglyLinkedList;
+
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,5 +21,20 @@ public class Main {
         int[] array2 = {3,2,1,4};
         Sorts.quickSort(array);
         System.out.println(Arrays.toString(array));
+
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        for (int i = 1; i <= 6; i+=2){
+            list.addFirst(i);
+            list.addLast(i+1);
+        }
+        System.out.println(list + "\n");
+        list.removeFirst();
+        list.removeLast();
+
+        System.out.println(list + "\n");
+        for (int i = 0; i < 5; i++){
+            //list.removeLast();
+        }
+        System.out.println(list);
     }
 }
