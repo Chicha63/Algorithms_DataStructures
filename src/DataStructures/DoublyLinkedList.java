@@ -2,12 +2,6 @@ package DataStructures;
 
 import Exceptions.RemoveFromEmptyException;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Type;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 public class DoublyLinkedList<T> {
     private DoublyLinkedNode<T> head;
     private DoublyLinkedNode<T> tail;

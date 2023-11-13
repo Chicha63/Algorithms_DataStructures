@@ -1,8 +1,5 @@
 import Algorithms.Sorts;
-import DataStructures.DoublyLinkedList;
-import DataStructures.DoublyLinkedNode;
-import DataStructures.Node;
-import DataStructures.SinglyLinkedList;
+import DataStructures.*;
 
 import java.util.Arrays;
 
@@ -18,23 +15,6 @@ public class Main {
                 62, 75, 45, 86, 1, 8, 23, 31, 11, 49,
                 27, 90, 32, 19, 4, 40, 63, 52, 55, 47,
                 56, 43, 51, 95, 54, 82, 57, 98, 99, 100};
-        int[] array2 = {3,2,1,4};
-        Sorts.quickSort(array);
-        System.out.println(Arrays.toString(array));
-
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-        for (int i = 1; i <= 6; i+=2){
-            list.addFirst(i);
-            list.addLast(i+1);
-        }
-        System.out.println(list + "\n");
-        list.removeFirst();
-        list.removeLast();
-
-        System.out.println(list + "\n");
-        for (int i = 0; i < 5; i++){
-            //list.removeLast();
-        }
-        System.out.println(list);
+        
     }
 }
