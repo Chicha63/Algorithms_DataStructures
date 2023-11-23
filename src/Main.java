@@ -15,5 +15,17 @@ public class Main {
                 62, 75, 45, 86, 1, 8, 23, 31, 11, 49,
                 27, 90, 32, 19, 4, 40, 63, 52, 55, 47,
                 56, 43, 51, 95, 54, 82, 57, 98, 99, 100};
+
+        ArrayQueue<Integer> queue = new ArrayQueue<>();
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        System.out.println(queue.peek());
+        queue.enqueue(4);
+        queue.enqueue(5);
+        queue.enqueue(6);
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue.peek());
     }
 }
