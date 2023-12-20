@@ -17,16 +17,13 @@ public class Main {
                 27, 90, 32, 19, 4, 40, 63, 52, 55, 47,
                 56, 43, 51, 95, 54, 82, 57, 98, 99, 100};
 
-        ArrayQueue<Integer> queue = new ArrayQueue<>();
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        System.out.println(queue.peek());
-        queue.enqueue(4);
-        queue.enqueue(5);
-        queue.enqueue(6);
-        System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
+        SymbolTableSS<Integer, Integer> tableSS = new SymbolTableSS<>();
+
+        tableSS.add(1,1);
+        tableSS.add(2,2);
+        System.out.println(tableSS.get(1));
+        System.out.println(tableSS.get(2));
+        tableSS.remove(2);
+        System.out.println(tableSS.get(2));
     }
 }

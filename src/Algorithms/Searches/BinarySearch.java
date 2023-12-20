@@ -1,6 +1,6 @@
-package Algorithms;
+package Algorithms.Searches;
 
-public class Searches {
+public class BinarySearch {
     public static int binarySearch(int[] array, int val){
         int bot = 0;
         int top = array.length;
@@ -12,14 +12,6 @@ public class Searches {
                 bot = mid+1;
             else
                 top = mid;
-        }
-        return -1;
-    }
-
-    public static int linearSearch(int[] array, int val){
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == val)
-                return i;
         }
         return -1;
     }

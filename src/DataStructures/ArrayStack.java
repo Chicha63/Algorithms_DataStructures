@@ -57,6 +57,11 @@ public class ArrayStack<T> {
         return size;
     }
 
+    @SuppressWarnings("unchecked")
+    public T[] toArray(){
+        return (T[]) items;
+    }
+
     @Override
     public String toString() {
         return Arrays.toString(items);
